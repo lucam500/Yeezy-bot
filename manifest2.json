@@ -1,0 +1,37 @@
+{
+  "name": "The Yeezy Bot",
+  "description": "v1",
+  "version": "1.0",
+  "manifest_version": 2,
+  "options_ui": {"page": "options.html", "chrome_style": true, "open_in_tab": false},
+  "permissions": [
+    "storage",
+    "activeTab",
+    "tabs",
+    "notifications",
+    "background",
+    "http://*/*",
+    "https://*/*",
+    "chrome://favicon/"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["jquery.js", "yeezy.js", "require.js"]
+    }
+  ],
+  "browser_action": {
+    "default_icon" : "icon-16.png",
+    "default_title": "Enable/Disable",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  }
+}
